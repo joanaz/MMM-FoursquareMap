@@ -1,10 +1,10 @@
 'use strict';
 const NodeHelper = require('node_helper');
 const request = require('request')
-const ACCESS_TOKEN = require('./FoursquareAccessToken.json')
+const KEYS = require('./keys.json')
 
 var today = new Date().toJSON().slice(0, 10).replace(/-/g, '')
-var URL = "https://api.foursquare.com/v2/users/self/checkins?oauth_token=" + ACCESS_TOKEN.access_token + "&v=" + today
+var URL = "https://api.foursquare.com/v2/users/self/checkins?oauth_token=" + KEYS.foursquare_access_token + "&v=" + today
 
 module.exports = NodeHelper.create({
   start_map: function() {
@@ -17,7 +17,7 @@ module.exports = NodeHelper.create({
           lng: item.venue.location.lng
         }))
 
-        self.sendSocketNotification("RESULT", coords);
+        self.sendSocketNotification("CHECKINS", coords);
       }
     })
   },
