@@ -1,7 +1,7 @@
 /* global Module */
 
 /* Magic Mirror
- * Module: MMM-Smile
+ * Module: MMM-FoursquareMap
  *
  * 
  * MIT Licensed.

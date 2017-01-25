@@ -1,7 +1,22 @@
-# MMM-MirrorMirrorOnTheWall
-This is an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It does smile test for the current user.
+# MMM-FoursquareMap
+This is an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It maps a user's Foursquare checkins.
 
-Algorithm from [emotion-detection](https://github.com/liy9393/emotion-detection)
+
+## Tokens
+
+Get your Foursquare access token [here](https://developer.foursquare.com/).
+
+Get your Google maps API key [here](https://developers.google.com/maps/documentation/javascript/).
+
+Save the Foursquare access token and Google maps API key in keys.json like this:
+
+```Javascript
+{
+  "foursquare_access_token": "YOUR FOURSQUARE ACCESS TOKEN",
+  "google_maps_api_key": "YOUR GOOGLE MAPS API KEY"
+}
+```
+
 
 ## Usage
 
@@ -9,18 +24,10 @@ The entry in config.js can look like the following. (NOTE: You only have to add 
 
 ```
 {
-	module: 'MMM-Emotion-Detection',
-	config: {
-		// recognition intervall in seconds
-		interval: 2,
-	}
+	module: 'MMM-FoursquareMap',
+    position: "middle_center",
+	config: {}
 }
 ```
 
-
-## Dependencies
-- [python-shell](https://www.npmjs.com/package/python-shell) (installed via `npm install`)
-- [OpenCV](http://opencv.org) 
-	- Linux: `sudo apt-get install libopencv-dev python-opencv` 
-	- Mac: `brew install opencv`
-
+Note: only the last 10 places you checked in will be displayed. The Google Maps API will return a "ZERO_RESULTS" error if the first place and the last place can't be reached through walking.
