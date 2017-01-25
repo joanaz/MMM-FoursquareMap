@@ -6,9 +6,9 @@ This is an extension for the [MagicMirror](https://github.com/MichMich/MagicMirr
 
 Get your Foursquare access token [here](https://developer.foursquare.com/).
 
-Get your Google maps API key [here](https://developers.google.com/maps/documentation/javascript/).
+Get your Google Maps API key [here](https://developers.google.com/maps/documentation/javascript/).
 
-Save the Foursquare access token and Google maps API key in keys.json like this:
+Create a keys.json, save your Foursquare access token and Google Maps API key in it like this:
 
 ```Javascript
 {
